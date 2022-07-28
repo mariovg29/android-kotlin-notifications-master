@@ -55,6 +55,7 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
         applicationContext.resources,
         R.drawable.cooked_egg
     )
+    // TODO: Step 2.1 add style to builder
     val bigPicStyle = NotificationCompat.BigPictureStyle()
         .bigPicture(eggImage)
         .bigLargeIcon(null)
@@ -71,16 +72,16 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
     // Build the notification
     val builder = NotificationCompat.Builder(
         applicationContext,
-        applicationContext.getString(R.string.egg_notification_channel_id)
-    )
+        applicationContext.getString(R.string.egg_notification_channel_id)    )
 
     // TODO: Step 1.8 use the new 'breakfast' notification channel
 
     // TODO: Step 1.3 set title, text and icon to builder
         .setSmallIcon(R.drawable.cooked_egg)
-        .setContentTitle(applicationContext
-            .getString(R.string.notification_title))
+        .setContentTitle(applicationContext.getString(R.string.notification_title))
         .setContentText(messageBody)
+
+
 
     // TODO: Step 1.13 set content intent
         .setContentIntent(contentPendingIntent)
@@ -92,7 +93,7 @@ fun NotificationManager.sendNotification(messageBody: String, applicationContext
 
         // TODO: Step 2.3 add snooze action
         .addAction(
-            R.drawable.egg_icon,
+            R.drawable.common_google_signin_btn_icon_dark,
             applicationContext.getString(R.string.snooze),
             snoozePendingIntent
         )
